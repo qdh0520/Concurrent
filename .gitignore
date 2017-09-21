@@ -1,0 +1,11 @@
+*.iml
+*.class
+/*.class
+/.idea
+/.idea/*
+/out
+/out/*
+target
+/target/*
+!.gitignore
+classes/*
