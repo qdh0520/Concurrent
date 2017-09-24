@@ -19,18 +19,18 @@ public class ThreadJoinExample2 {
                 for (Integer integer : integers) {
                     FactorialCalculator calc = new FactorialCalculator(integer);
                     threads.add(calc);
-                    calc.start();
+                 calc.start();
                 }
                 for (FactorialCalculator calc : threads) {
-                    try {
-                        calc.join();
+                  try {
+                       calc.join();  //不加join 不能确保阶乘计算完再输出
                         System.out.println(calc.getNumber() + "! = "
-                                + calc.getFactorial());
+                                + calc.getFactorial());//这是A线程语句输出的时候，calc线程的阶乘结果可能还没有算好
 
-                    } catch (InterruptedException e) {
+                  } catch (InterruptedException e) {
                         e.printStackTrace();
-                    }
-                }
+                   }
+              }
             }
         }).start();
     }
@@ -38,7 +38,7 @@ public class ThreadJoinExample2 {
     private static class FactorialCalculator extends Thread {
 
         private final int number;
-        private BigDecimal factorial;
+        private BigDecimal factorial= BigDecimal.valueOf(3628801);
 
         FactorialCalculator (int number) {
             this.number = number;

@@ -11,9 +11,9 @@ public class ThreadJoinExample {
 //        thread1.join();//here the main thread will wait until thread1 fishes.
 //        System.out.println("after join");
 
-        Task task2 = new Task();  //Note Thread-1 starts only after Thread-0 terminates.
+//        Task task2 = new Task();  //Note Thread-1 starts only after Thread-0 terminates.
         // 如果去掉thread1.join();task 与task2的启动是随机的
-        new Thread(task2).start();
+//        new Thread(task2).start();
     }
 
     private static class Task implements Runnable {
