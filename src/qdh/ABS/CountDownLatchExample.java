@@ -16,7 +16,7 @@ public class CountDownLatchExample {
         frame.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         for (int i = 1; i <= LATCH_COUNT; i++) {
-            ProgressThread progressThread = new ProgressThread(latch, i * 10);
+            ProgressThreadCD progressThread = new ProgressThreadCD(latch, i * 10);
             frame.add(progressThread.getProgressComponent());
             progressThread.start();
         }
@@ -33,7 +33,7 @@ public class CountDownLatchExample {
         }
         JFrame frame = new JFrame("CountDownLatch Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(ProgressThread.PROGRESS_WIDTH, 170));
+        frame.setSize(new Dimension(ProgressThreadCD.PROGRESS_WIDTH, 170));
         return frame;
     }
 

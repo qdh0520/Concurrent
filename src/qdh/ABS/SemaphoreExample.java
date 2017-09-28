@@ -46,7 +46,7 @@ public class SemaphoreExample {
             panels.add(wp);
         }
 
-        frame.setLocationRelativeTo(null);
+        frame.setLocationRelativeTo(null);  //使窗口显示在屏幕正中心
         frame.setVisible(true);
         return panels;
     }
